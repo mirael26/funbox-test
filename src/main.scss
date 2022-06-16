@@ -1,3 +1,6 @@
 @import './normalize.css';
+@import './scss/scaffolding.scss';
+@import './scss/visually-hidden.scss';
 
 @import './components/app/app.scss';
+@import './components/products/products.scss';
