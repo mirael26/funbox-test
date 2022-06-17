@@ -65,7 +65,7 @@ const Card = ({product}) => {
 };
 
 Card.propTypes = {
-  product: PropTypes.arrayOf(PropTypes.shape({
+  product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     flavor: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
@@ -76,7 +76,7 @@ Card.propTypes = {
       text: PropTypes.string.isRequired,
     })).isRequired,
     isAvailable: PropTypes.bool.isRequired,
-  })).isRequired
+  }).isRequired
 }
 
 export default Card;
