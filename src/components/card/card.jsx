@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const Card = ({product}) => {
   const [status, setStatus] = useState("default");
@@ -62,5 +63,20 @@ const Card = ({product}) => {
     </div>
   );
 };
+
+Card.propTypes = {
+  product: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    flavor: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    weight: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    details: PropTypes.arrayOf(PropTypes.shape({
+      number: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    })).isRequired,
+    isAvailable: PropTypes.bool.isRequired,
+  })).isRequired
+}
 
 export default Card;
