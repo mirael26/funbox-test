@@ -1,0 +1,174 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 480px;
+  margin-bottom: 50px;
+  padding: 21px 30px 16px 48px;
+  cursor: pointer;
+
+  &--disabled {
+    cursor: auto;
+  }
+}
+
+.card__bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: url('./../../img/cat-photo.png'), #fff;
+  background-position: -29px 209px;
+  background-repeat: no-repeat;
+  clip-path: polygon(0% 9%, 14% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: -2;
+}
+
+.card__border {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.card__border-path {
+  .card--default & {
+    fill: $blue;
+  }
+
+  .card--default.hover & {
+    fill: $light-blue;
+  }
+
+  .card--selected & {
+    fill: $pink;
+  }
+
+  .card--selected.hover & {
+    fill: $light-pink;
+  }
+
+  .card--disabled & {
+    fill: $grey;
+  }
+}
+
+.card__subtitle {
+  margin-bottom: 5px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  .card--selected.hover & {
+    color: #E62E7A;
+  }
+}
+
+.card__title {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.card__flavor-text {
+  margin-bottom: 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.card__details-text {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.card__details-number {
+  font-weight: 700;
+}
+
+.card__weight-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  .card--default & {
+    background-color: $blue;
+  }
+  
+  .card--default.hover & {
+    background-color: $light-blue;
+  }
+
+  .card--selected & {
+    background-color: $pink;
+  }
+
+  .card--selected.hover & {
+    background-color: $light-pink;
+  }
+
+  .card--disabled & {
+    background-color: $grey;
+  }
+}
+
+.card__weight {
+  margin-bottom: 9px;
+  font-family: 'Trebuchet MS';
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.card__weight-unit {
+  font-family: 'Trebuchet MS';
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.card__slogan {
+  position: absolute;
+  left: 0px;
+  bottom: -26px;
+  width: 100%;
+  font-family: 'Trebuchet MS';
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  color: white;
+}
+
+.card__purchase-link {
+  font-weight: 700;
+  color: $blue;
+
+  & .with-underline {
+    text-decoration: underline dashed $blue;
+  }
+}
+
+@media (max-width: 1119px) {
+  .card {
+    &:last-child:nth-child(2n+1) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
